@@ -2,6 +2,7 @@
   <%= simple_form_for(task) do |t| %>
     <%= t.input :title %>
     <%= t.input :details %>
+    <%= t.input :completed unless task.new_record? %>
     <%= t.submit %>
   <% end %>
 </div>
