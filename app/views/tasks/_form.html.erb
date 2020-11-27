@@ -1,4 +1,4 @@
-<div class="container">
+<div class="card">
   <%= simple_form_for(task) do |t| %>
     <%= t.input :title %>
     <%= t.input :details %>
@@ -6,3 +6,5 @@
     <%= t.submit %>
   <% end %>
 </div>
+
+<%= link_to '<i class="fa fa-undo"></i> Back to list'.html_safe, tasks_path %>

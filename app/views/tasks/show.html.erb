@@ -1,8 +1,14 @@
-<h1><%= @task.title %> </h1>
-<%= link_to 'Edit task', edit_task_path(@task) %>
-<p><%= @task.details %></p>
-<p>
-  <input type="checkbox" name="completed" value="<%= @task.completed %>" <%= 'checked' if @task.completed %>>
-  <%= @task.completed ? "This task is completed" : "This task is not completed yet"%>
-</p>
-<%= link_to "Back to list", tasks_path  %>
+<div class="card">
+  <div class="d-flex p-2 bd-highlight align-items-center justify-content-between">
+    <h2><%= @task.title %> </h2>
+    <%= link_to '<i class="fa fa-edit"></i> Edit this task'.html_safe, edit_task_path(@task) %>
+  </div>
+  <p><%= @task.details %></p>
+  <p>
+    <input type="checkbox" name="completed" value="<%= @task.completed %>" <%= 'checked' if @task.completed %>>
+    <%= @task.completed ? "This task is completed" : "This task is not completed yet"%>
+  </p>
+</div>
+<div class="card">
+  <%= link_to '<i class="fa fa-undo"></i> Back to list'.html_safe, tasks_path %>
+</div>
